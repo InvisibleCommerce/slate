@@ -19,7 +19,9 @@
         "country": "US"
     },
     "customer": {
-        "email": "john.doe@johndoe.com"
+        "email": "john.doe@johndoe.com",
+        "first_name": "John",
+        "last_name": "Doe"
     },
     "stripe_token": "tok_1Iv7zqE13IfS2ayBawZXcrpH",
     "items": [
@@ -46,7 +48,9 @@
         "shelterluv_prefix": "TEST"
     },
     "customer": {
-        "email": "john.doe@johndoe.com"
+        "email": "john.doe@johndoe.com",
+        "first_name": "John",
+        "last_name": "Doe"
     },
     "address": {
         "first_name": "John",
@@ -112,7 +116,7 @@ This endpoint creates a product subscription.
 
 ### Validations
 
-- `stripe_token` must be a valid token available in our Stripe account. The endpoint will return a 400 error if it is not valid.
+- `stripe_token` must be a valid token available in our Stripe account (use Stripe test mode with Staging environment). The endpoint will return a 400 error if it is not valid.
 - `address[state]` must be a 2-letter state code, e.g. `IL`
 - `address[country]` can only be 'US'. Given that only one value is possible, it can optionally be omitted from the request. 
 - `customer[email]` must be a valid email. 
