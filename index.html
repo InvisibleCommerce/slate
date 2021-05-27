@@ -373,6 +373,9 @@
               </ul>
           </li>
           <li>
+            <a href="#rate-limits" class="toc-h1 toc-link" data-title="Rate Limits">Rate Limits</a>
+          </li>
+          <li>
             <a href="#swagger-ui" class="toc-h1 toc-link" data-title="Swagger UI">Swagger UI</a>
           </li>
       </ul>
@@ -1049,6 +1052,10 @@ When querying by <code>shelterluv_prefix</code>, the result will always be an ar
 <td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
 </tr>
 </tbody></table>
+<h1 id='rate-limits'>Rate Limits</h1>
+<p>Our API does not presently implement a rate limit. However, in order to prevent our servers from being overwhelmed, we recommend not exceeding a rate of 1 request per second. </p>
+
+<p>We reserve the right to implement a rate limit at any time. If a rate limit is implemented, and you exceed the limit, you will receive a 429 response. In such a case, please slow down your requests. </p>
 <h1 id='swagger-ui'>Swagger UI</h1>
 <p>Swagger UI is available for further details about the endpoints and models. You can also use it to try the API without having to write any code. You can access our Swagger UI at:</p>
 
