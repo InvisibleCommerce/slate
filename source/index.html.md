@@ -13,6 +13,7 @@ includes:
   - products
   - product_subscriptions
   - errors
+  - rate_limits
   - swagger
 
 search: true
