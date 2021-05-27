@@ -418,7 +418,7 @@ You must replace <code>1234567890987654321</code> with the API key supplied to y
 <li>Production: <code>https://nexus.invisiblecommerce.com/api/v1/</code></li>
 </ul>
 
-<p>Please perform all testing and development work against the Staging environment. </p>
+<p>Please perform all testing and development work against the Staging environment. We can data in this environments as needed for your test cases. Please note that since this environment is not optimized for production usage, relatively slow response times are normal. </p>
 
 <p>When you have finished development, please request from our engineering team an API key for use with the Production environment. </p>
 <h1 id='pagination'>Pagination</h1><h3 id='query-parameters'>Query Parameters</h3>
@@ -798,7 +798,9 @@ When querying by <code>shelterluv_prefix</code>, the result will always be an ar
         </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@johndoe.com"</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@johndoe.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"stripe_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tok_1Iv7zqE13IfS2ayBawZXcrpH"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -824,7 +826,9 @@ When querying by <code>shelterluv_prefix</code>, the result will always be an ar
         </span><span class="nl">"shelterluv_prefix"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@johndoe.com"</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@johndoe.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
@@ -1000,7 +1004,7 @@ When querying by <code>shelterluv_prefix</code>, the result will always be an ar
 </tbody></table>
 <h3 id='validations'>Validations</h3>
 <ul>
-<li><code>stripe_token</code> must be a valid token available in our Stripe account. The endpoint will return a 400 error if it is not valid.</li>
+<li><code>stripe_token</code> must be a valid token available in our Stripe account (use Stripe test mode with Staging environment). The endpoint will return a 400 error if it is not valid.</li>
 <li><code>address[state]</code> must be a 2-letter state code, e.g. <code>IL</code></li>
 <li><code>address[country]</code> can only be &#39;US&#39;. Given that only one value is possible, it can optionally be omitted from the request. </li>
 <li><code>customer[email]</code> must be a valid email. </li>
