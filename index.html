@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>Invisible Commerce API</title>
 
     <style media="screen">
       .highlight table td { padding: 5px; }
@@ -291,7 +291,7 @@
     </script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
@@ -299,12 +299,9 @@
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo-1e815a84.png" class="logo" alt="" />
+      <img src="images/logo-daa75872.png" class="logo" alt="" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
-              <a href="#" data-language-name="ruby">ruby</a>
-              <a href="#" data-language-name="python">python</a>
-              <a href="#" data-language-name="javascript">javascript</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -318,216 +315,676 @@
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
           </li>
           <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#content-type" class="toc-h1 toc-link" data-title="Content Type">Content Type</a>
+          </li>
+          <li>
+            <a href="#environments" class="toc-h1 toc-link" data-title="Environments">Environments</a>
+          </li>
+          <li>
+            <a href="#pagination" class="toc-h1 toc-link" data-title="Pagination">Pagination</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#query-parameters" class="toc-h2 toc-link" data-title="Query Parameters">Query Parameters</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#pagination-headers" class="toc-h2 toc-link" data-title="Pagination Headers">Pagination Headers</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#storefronts" class="toc-h1 toc-link" data-title="Storefronts">Storefronts</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-storefronts" class="toc-h2 toc-link" data-title="Get All Storefronts">Get All Storefronts</a>
                   </li>
                   <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
+                    <a href="#get-a-specific-storefront" class="toc-h2 toc-link" data-title="Get a Specific Storefront">Get a Specific Storefront</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#products" class="toc-h1 toc-link" data-title="Products">Products</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-products" class="toc-h2 toc-link" data-title="Get All Products">Get All Products</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-product" class="toc-h2 toc-link" data-title="Get a Specific Product">Get a Specific Product</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#product-subscriptions" class="toc-h1 toc-link" data-title="Product Subscriptions">Product Subscriptions</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-a-product-subscription" class="toc-h2 toc-link" data-title="Create a Product Subscription">Create a Product Subscription</a>
                   </li>
               </ul>
           </li>
           <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#error-messages" class="toc-h2 toc-link" data-title="Error Messages">Error Messages</a>
+                  </li>
+                  <li>
+                    <a href="#error-codes" class="toc-h2 toc-link" data-title="Error Codes">Error Codes</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#swagger-ui" class="toc-h1 toc-link" data-title="Swagger UI">Swagger UI</a>
           </li>
       </ul>
-        <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
-        </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
-
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
-
-<p>This example API documentation page was created with <a href="https://github.com/slatedocs/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
+<p>The Invisible Commerce API provides access to Invisible Commerce functions, including those of its subsidiary Ethical Paws. </p>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
-<div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
 curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: 1234567890987654321"</span>
 </code></pre></div>
 <blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
+<p>Make sure to replace <code>1234567890987654321</code> with your API key.</p>
 </blockquote>
 
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
+<p>Invisible Commerce uses API keys to allow access to the API. Our engineering team will provide you with an API key for our Staging environment. </p>
 
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+<p>The API key must be included in all API requests to the server in an Authorization header:</p>
 
-<p><code>Authorization: meowmeowmeow</code></p>
+<p><code>Authorization: 1234567890987654321</code></p>
+
+<p>Please notify us immediately if your token is compromised. We are also able to provide an additional token to aid in token rotation. 
+<aside class="notice">
+You must replace <code>1234567890987654321</code> with the API key supplied to you by our engineering team. 
+</aside></p>
+<h1 id='content-type'>Content Type</h1>
+<p>All endpoints utilize the <code>application/json</code> content type. Please send the following header in your request:</p>
+
+<p><code>Content-Type: application/json</code></p>
+
+<p>The response content type will always be JSON.</p>
+<h1 id='environments'>Environments</h1>
+<p>Invisible Commerce maintains 2 environments:</p>
+
+<ul>
+<li>Staging: <code>https://nexus-staging.invisiblecommerce.com/api/v1/</code></li>
+<li>Production: <code>https://nexus.invisiblecommerce.com/api/v1/</code></li>
+</ul>
+
+<p>Please perform all testing and development work against the Staging environment. </p>
+
+<p>When you have finished development, please request from our engineering team an API key for use with the Production environment. </p>
+<h1 id='pagination'>Pagination</h1><h3 id='query-parameters'>Query Parameters</h3>
+<p>Pagination can be achieved by using the following parameters on endpoints that support pagination:</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>query</td>
+<td>Page offset to fetch.</td>
+<td>No</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>per_page</td>
+<td>query</td>
+<td>Number of results to return per page.</td>
+<td>No</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>query</td>
+<td>Pad a number of results.</td>
+<td>No</td>
+<td>integer</td>
+</tr>
+</tbody></table>
+<h3 id='pagination-headers'>Pagination Headers</h3>
+<p>Endpoints that support pagination will also provide pagination information in the response headers:</p>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>X-Total</td>
+<td>Total number of matching records.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>X-Per-Page</td>
+<td>Number of records being returned per page.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>X-Total-Pages</td>
+<td>Total number of pages.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>X-Page</td>
+<td>Current page number being returned.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>X-Next-Page</td>
+<td>Page number for the next page.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>X-Prev-Page</td>
+<td>Page number for the previous page.</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>X-Offset</td>
+<td>Number of records skipped.</td>
+<td>integer</td>
+</tr>
+</tbody></table>
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+A maximum <code>per_page</code> of 100 is supported. The default is 20.  
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">();</span>
+<h1 id='storefronts'>Storefronts</h1><h2 id='get-all-storefronts'>Get All Storefronts</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nexus.invisiblecommerce.com/api/v1/storefronts"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: 1234567890987654321"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Happy Paws Rescue"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"shelterluv_prefix"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"recommended_variants"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IC Dev"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"shelterluv_prefix"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"recommended_variants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6424</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6-oz"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Zukes Chicken Mini Naturals Dog Treats (6-oz)"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.99"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"retail_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7.99"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"global_barcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"013423330517"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"product"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">116</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Zukes Chicken Mini Naturals Dog Treats"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"brand_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Zukes"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"category_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dog &gt; Treats"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"description_body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Training is one of the biggest adventures you and your dog will set off on together. And with the right treat, you can keep each and every moment healthy and deliciously fun. At less than 3 calories per treat, Zuke's Mini Naturals dog treats are the perfect little size for use as a training treat, or perfect as a small breed dog treat. These soft and chewy dog treats are specially crafted in the USA using the Earth's best ingredients — like protein-rich meat, wholefood berries, savory herbs and NO corn, wheat or soy.</span><span class="se">\r\n\r\n\r\n</span><span class="s2">With less than 3 calories per treat, Zuke's Mini Naturals are ideal for use as training treats or as a small breed dog treats"</span><span class="p">,</span><span class="w">
+                    </span><span class="nl">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="s2">"https://invisible-commerce-development.s3.us-west-1.amazonaws.com/cpe7cin1a3tkkqrs7rmf62qmexnu?response-content-disposition=inline%3B%20filename%3D%2212338-1578608193.jpeg%22%3B%20filename%2A%3DUTF-8%27%2712338-1578608193.jpeg&amp;response-content-type=image%2Fjpeg&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIATEU2MX3TZE6K3J7U%2F20210527%2Fus-west-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20210527T012644Z&amp;X-Amz-Expires=300&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=df9b0c64fc171bf90abd094ac5a1cd3817f723aeb0123bd39324fe16097717ba"</span><span class="p">,</span><span class="w">
+                        </span><span class="s2">"https://invisible-commerce-development.s3.us-west-1.amazonaws.com/2qayweemricge0e3dlid1uum06qi?response-content-disposition=inline%3B%20filename%3D%2212338-1578608220.jpeg%22%3B%20filename%2A%3DUTF-8%27%2712338-1578608220.jpeg&amp;response-content-type=image%2Fjpeg&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIATEU2MX3TZE6K3J7U%2F20210527%2Fus-west-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20210527T012644Z&amp;X-Amz-Expires=300&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=ac1e6274e47d8d9164b9d00772e3368b5a8bd5286167ea5e6b416e0573b23432"</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves all kittens.</p>
+<p>This endpoint retrieves all storefronts. This endpoint supports <a href="#pagination">pagination</a>.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
+<p><code>GET /api/v1/storefronts</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Default</th>
+<th>Name</th>
+<th>Location</th>
 <th>Description</th>
+<th>Required</th>
+<th>Type</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
-</tr>
-<tr>
-<td>available</td>
-<td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>shelterluv_prefix</td>
+<td>query</td>
+<td>ID prefix used by Shelterluv</td>
+<td>No</td>
+<td>string</td>
 </tr>
 </tbody></table>
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+<aside class="notice">
+When querying by <code>shelterluv_prefix</code>, the result will always be an array of one, as the <code>shelterluv_prefix</code> is unique.
 </aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="kd">get</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<h2 id='get-a-specific-storefront'>Get a Specific Storefront</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nexus.invisiblecommerce.com/api/v1/storefronts/14"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: 1234567890987654321"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IC Dev"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"shelterluv_prefix"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"recommended_variants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6424</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6-oz"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Zukes Chicken Mini Naturals Dog Treats (6-oz)"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.99"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"retail_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7.99"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"global_barcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"013423330517"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"product"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">116</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Zukes Chicken Mini Naturals Dog Treats"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"brand_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Zukes"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"category_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dog &gt; Treats"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"description_body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Training is one of the biggest adventures you and your dog will set off on together. And with the right treat, you can keep each and every moment healthy and deliciously fun. At less than 3 calories per treat, Zuke's Mini Naturals dog treats are the perfect little size for use as a training treat, or perfect as a small breed dog treat. These soft and chewy dog treats are specially crafted in the USA using the Earth's best ingredients — like protein-rich meat, wholefood berries, savory herbs and NO corn, wheat or soy.</span><span class="se">\r\n\r\n\r\n</span><span class="s2">With less than 3 calories per treat, Zuke's Mini Naturals are ideal for use as training treats or as a small breed dog treats"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="s2">"https://invisible-commerce-development.s3.us-west-1.amazonaws.com/cpe7cin1a3tkkqrs7rmf62qmexnu?response-content-disposition=inline%3B%20filename%3D%2212338-1578608193.jpeg%22%3B%20filename%2A%3DUTF-8%27%2712338-1578608193.jpeg&amp;response-content-type=image%2Fjpeg&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIATEU2MX3TZE6K3J7U%2F20210527%2Fus-west-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20210527T025443Z&amp;X-Amz-Expires=300&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=e716dc826d0ac43393528f8be6020d41242a0b19b7f379e3e3be1565dd95b46e"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"https://invisible-commerce-development.s3.us-west-1.amazonaws.com/2qayweemricge0e3dlid1uum06qi?response-content-disposition=inline%3B%20filename%3D%2212338-1578608220.jpeg%22%3B%20filename%2A%3DUTF-8%27%2712338-1578608220.jpeg&amp;response-content-type=image%2Fjpeg&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIATEU2MX3TZE6K3J7U%2F20210527%2Fus-west-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20210527T025443Z&amp;X-Amz-Expires=300&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=fb0bb31ab968339a1a1a63dd98d8cde2ed9d8b60737301d75b4cf92a606bbfe2"</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves a specific kitten.</p>
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+<p>This endpoint retrieves a specific storefront.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
+<p><code>GET /api/v1/storefronts/&lt;ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Name</th>
+<th>Location</th>
 <th>Description</th>
+<th>Required</th>
+<th>Type</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td>id</td>
+<td>path</td>
+<td>ID of the requested storefront</td>
+<td>Yes</td>
+<td>integer</td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="p">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="n">kittens</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span> <span class="se">\</span>
-  <span class="nt">-X</span> DELETE <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="kd">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">kittn</span><span class="dl">'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="dl">'</span><span class="s1">meowmeowmeow</span><span class="dl">'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<h1 id='products'>Products</h1><h2 id='get-all-products'>Get All Products</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nexus-staging.invisiblecommerce.com/api/v1/products"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: 1234567890987654321"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diamond Naturals Beef Meal &amp; Rice Formula Adult Dry Dog Food"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"brand_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diamond"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"category_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dog &gt; Dry Food"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description_body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Real beef protein, along with added super foods, provides the energy and muscle building blocks your dog needs to stay active and strong. Guaranteed levels of vitamin E and selenium ensure that your dog is receiving optimum antioxidant nutrition, while omega-6 and omega-3 fatty acids from super foods help maintain healthy skin and a shiny coat. </span><span class="se">\r\n</span><span class="s2">- Real beef protein for superior taste and nutrition</span><span class="se">\r\n</span><span class="s2">- Guaranteed levels of vitamin E and selenium</span><span class="se">\r\n</span><span class="s2">- Omega-6 and omega-3 fatty acids for skin and coat</span><span class="se">\r\n</span><span class="s2">- Enhanced with super foods and probiotics</span><span class="se">\r\n</span><span class="s2">- No corn, no wheat, no soy"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"variants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">224</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"40-lb"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diamond Naturals Beef Meal &amp; Rice Formula Adult Dry Dog Food (40-lb)"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"35.99"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"retail_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"43.99"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"global_barcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"074198608331"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"https://invisible-commerce-development.s3.us-west-1.amazonaws.com/1pnx6vr2vqn162zwg7chupizb24z?response-content-disposition=inline%3B%20filename%3D%2230771-1569514668.jpeg%22%3B%20filename%2A%3DUTF-8%27%2730771-1569514668.jpeg&amp;response-content-type=image%2Fjpeg&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIATEU2MX3TZE6K3J7U%2F20210527%2Fus-west-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20210527T025848Z&amp;X-Amz-Expires=300&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=7d72e291d65f48cf9c355b810b9cbf49de4a133c8c3f643edb1cc64e13f39724"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"https://invisible-commerce-development.s3.us-west-1.amazonaws.com/pmt6begyv2ybjssjbnxjy8cnlhty?response-content-disposition=inline%3B%20filename%3D%2230771-1575318206.jpeg%22%3B%20filename%2A%3DUTF-8%27%2730771-1575318206.jpeg&amp;response-content-type=image%2Fjpeg&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIATEU2MX3TZE6K3J7U%2F20210527%2Fus-west-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20210527T025848Z&amp;X-Amz-Expires=300&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=faffcbac242a420ff044b60a9559802bf53c4784a02e987d7d06ea7660ef9320"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diamond Naturals Extreme Athlete Dry Dog Food"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"brand_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diamond"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"category_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dog &gt; Dry Food"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description_body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diamond Naturals Extreme Athlete is specifically formulated with optimal levels of protein, fat and whole grain to fuel your hard-working dog. Omega fatty acids and antioxidants help support ideal muscle condition, helping your dog stay active, strong and fit. </span><span class="se">\r\n</span><span class="s2">- Ideal for highly active and sporting dogs</span><span class="se">\r\n</span><span class="s2">- Chicken and rice formula</span><span class="se">\r\n</span><span class="s2">- Optimal levels of protein and fat</span><span class="se">\r\n</span><span class="s2">- Enhanced with super foods and probiotics</span><span class="se">\r\n</span><span class="s2">- No corn, no wheat, no soy"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"variants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">221</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"40-lb"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diamond Naturals Extreme Athlete Dry Dog Food (40-lb)"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"42.99"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"retail_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"51.99"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"global_barcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"074198609543"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"https://invisible-commerce-development.s3.us-west-1.amazonaws.com/arpwdkn1ftx5bftgbyn205d1ia7p?response-content-disposition=inline%3B%20filename%3D%2230773-1569515308.jpeg%22%3B%20filename%2A%3DUTF-8%27%2730773-1569515308.jpeg&amp;response-content-type=image%2Fjpeg&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIATEU2MX3TZE6K3J7U%2F20210527%2Fus-west-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20210527T025848Z&amp;X-Amz-Expires=300&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=d26b3a5637f0578514c7c48e3a17baa168ed1e238818c00a43caed19b595d47a"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves all products.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://nexus-staging.invisiblecommerce.com/api/v1/products</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Located in</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>query</td>
+<td>Page offset to fetch.</td>
+<td>No</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>per_page</td>
+<td>query</td>
+<td>Number of results to return per page.</td>
+<td>No</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>query</td>
+<td>Pad a number of results.</td>
+<td>No</td>
+<td>integer</td>
+</tr>
+</tbody></table>
+<h2 id='get-a-specific-product'>Get a Specific Product</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nexus-staging.invisiblecommerce.com/api/v1/products/34"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: 1234567890987654321"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diamond Naturals Grain Free Whitefish &amp; Sweet Potato Dry Dog Food"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"brand_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diamond"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"category_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Dog &gt; Dry Food"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description_body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diamond Pet Foods is proud to offer Diamond Naturals Grain-Free. All of the Diamond Naturals Grain-Free formulas are made with superior animal protein sources and zero grains to optimize digestion and limit exposure to allergy triggers. These formulas all provide key nutrients essential to your dog's health and vitality.</span><span class="se">\r\n\r\n</span><span class="s2">Product Features:</span><span class="se">\r\n</span><span class="s2">* Protein Blend, Real beef, chicken or fish protein sources provide dogs with the amino acid building blocks necessary for ideal lean body condition</span><span class="se">\r\n</span><span class="s2">* Fruits and Veggies - Sweet potatoes, peas, garbanzo beans, potatoes, blueberries and raspberries provide an excellent spectrum of phytonutrients</span><span class="se">\r\n</span><span class="s2">* Antioxidant Formulation - Guaranteed levels of selenium and vitamin E help support a healthy lifestyle.</span><span class="se">\r\n</span><span class="s2">* Grain-free foods provide optimal nutrition for dogs sensitive to grain</span><span class="se">\r\n</span><span class="s2">* Made in the USA!!!"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"variants"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">225</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"28-lb"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diamond Naturals Grain Free Whitefish &amp; Sweet Potato Dry Dog Food (28-lb)"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"41.99"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"retail_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50.99"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"global_barcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"074198611553"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6332</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14-lb"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Diamond Naturals Grain Free Whitefish &amp; Sweet Potato Dry Dog Food (14-lb)"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24.99"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"retail_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"29.99"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"global_barcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"074198611546"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"https://invisible-commerce-development.s3.us-west-1.amazonaws.com/6e0alc0pyuvrz86rui5mv00yu88x?response-content-disposition=inline%3B%20filename%3D%2233653-1569516624.jpeg%22%3B%20filename%2A%3DUTF-8%27%2733653-1569516624.jpeg&amp;response-content-type=image%2Fjpeg&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIATEU2MX3TZE6K3J7U%2F20210527%2Fus-west-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20210527T025849Z&amp;X-Amz-Expires=300&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=a944129d765f3939ecde1e2a31053d8adaccb8a6f5fbb0b7251ad27796ba7ec9"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
+<p>This endpoint retrieves a specific product.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://nexus-staging.invisiblecommerce.com/api/v1/products/&lt;ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Name</th>
+<th>Located in</th>
 <th>Description</th>
+<th>Required</th>
+<th>Type</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
+<td>id</td>
+<td>path</td>
+<td></td>
+<td>Yes</td>
+<td>integer</td>
 </tr>
 </tbody></table>
-<h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
+<h1 id='product-subscriptions'>Product Subscriptions</h1><h2 id='create-a-product-subscription'>Create a Product Subscription</h2>
+<blockquote>
+<p>Sample request payload:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"storefront_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w"> 
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123 Main St"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Springfield"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IL"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"zip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22803"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"888-111-4343"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@johndoe.com"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"stripe_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tok_1Iv7zqE13IfS2ayBawZXcrpH"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"variant_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6428</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"recurrence"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"every"</span><span class="p">:</span><span class="w"> </span><span class="s2">"week"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"interval"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<blockquote>
+<p>Sample reponse payload:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PS-2243846360"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"storefront"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IC Dev"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"shelterluv_prefix"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"customer"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"john.doe@johndoe.com"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"first_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"John"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doe"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123 Main St"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address2"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Springfield"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IL"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"zip"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22803"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"888-111-4343"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"product_subscription_items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"variant"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6428</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3-inch"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Redbarn Peanut Butter Filled Bone For Dogs (3-inch)"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.01"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"retail_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.99"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"global_barcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"785184403037"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5.01"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"recurrence"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"every"</span><span class="p">:</span><span class="w"> </span><span class="s2">"week"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"interval"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint creates a product subscription. </p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>POST /api/v1/product_subscriptions</code></p>
+<h3 id='payload-parameters'>Payload Parameters</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Location</th>
+<th>Description</th>
+<th>Required</th>
+<th>Type</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>storefront_id</td>
+<td>body</td>
+<td>ID of the Storefront the Product Subscription is related to</td>
+<td>Yes</td>
+<td>integer</td>
+</tr>
+<tr>
+<td>stripe_token</td>
+<td>body</td>
+<td>Stripe token used to charge the customer</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>address[first_name]</td>
+<td>body</td>
+<td>Shipping address first name</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>address[last_name]</td>
+<td>body</td>
+<td>Shipping address last name</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>address[address1]</td>
+<td>body</td>
+<td>Shipping address line 1</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>address[address2]</td>
+<td>body</td>
+<td>Shipping address line 2</td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>address[city]</td>
+<td>body</td>
+<td>Shipping address city</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>address[state]</td>
+<td>body</td>
+<td>Shipping address state</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>address[zip]</td>
+<td>body</td>
+<td>Shipping address ZIP code</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>address[country]</td>
+<td>body</td>
+<td>Shipping address country</td>
+<td>No</td>
+<td>string</td>
+</tr>
+<tr>
+<td>address[phone]</td>
+<td>body</td>
+<td>Shipping address phone number</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>customer[email]</td>
+<td>body</td>
+<td>Customer&#39;s email address</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>items[][variant_id]</td>
+<td>body</td>
+<td>ID of Variant to subscribe to</td>
+<td>Yes</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>items[][quantity]</td>
+<td>body</td>
+<td>Quantity of the Variant to subscribe to</td>
+<td>Yes</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>recurrence[every]</td>
+<td>body</td>
+<td>Unit of recurrence, e.g. week for &quot;every 4 weeks&quot;</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>recurrence[interval]</td>
+<td>body</td>
+<td>Number of units between each recurrence, e.g. 4 for &quot;every 4 weeks&quot;</td>
+<td>Yes</td>
+<td>Integer</td>
+</tr>
+</tbody></table>
+<h3 id='validations'>Validations</h3>
+<ul>
+<li><code>stripe_token</code> must be a valid token available in our Stripe account. The endpoint will return a 400 error if it is not valid.</li>
+<li><code>address[state]</code> must be a 2-letter state code, e.g. &#39;IL&#39;</li>
+<li><code>address[country]</code> can only be &#39;US&#39;. Given that only one value is possible, it can optionally be omitted from the request. </li>
+<li><code>customer[email]</code> must be a valid email. </li>
+<li><code>items[][quantity]</code> can optionally be omitted, in which case it will default to a value of <code>1</code>.</li>
+<li><code>recurrence[every]</code> can only be one of the following 3 values: <code>day</code>, <code>week</code>, or <code>month</code>.</li>
+</ul>
+<h1 id='errors'>Errors</h1><h3 id='error-messages'>Error Messages</h3>
+<p>In general, when you encounter an error, you will receive JSON in the body of the response, detailing specifics of the error, e.g.:</p>
 
-<p>The Kittn API uses the following error codes:</p>
+<p><code>{ error: &quot;storefront_id is empty&quot; }</code></p>
+<h3 id='error-codes'>Error Codes</h3>
+<p>You may encounter some of the following errors:</p>
 
 <table><thead>
 <tr>
@@ -544,50 +1001,33 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 <td>Unauthorized -- Your API key is wrong.</td>
 </tr>
 <tr>
-<td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
-</tr>
-<tr>
 <td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
+<td>Not Found -- A specified entity could not be found.</td>
 </tr>
 <tr>
 <td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
+<td>Not Allowed -- Method not allowed on endpoint.</td>
 </tr>
 <tr>
 <td>500</td>
-<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+<td>Internal Server Error -- We had an unexpected problem. Please contact our engineering team if it does not resolve itself.</td>
 </tr>
 <tr>
 <td>503</td>
 <td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
 </tr>
 </tbody></table>
+<h1 id='swagger-ui'>Swagger UI</h1>
+<p>Swagger UI is available for further details about the endpoints and models. You can also use it to try the API without having to write any code. You can access our Swagger UI at:</p>
+
+<p><a href="https://nexus-staging.invisiblecommerce.com/api/v1/docs">https://nexus-staging.invisiblecommerce.com/api/v1/docs</a></p>
+
+<p>Remember to use the Authorize button with your issued API key. </p>
 
       </div>
       <div class="dark-box">
           <div class="lang-selector">
                 <a href="#" data-language-name="shell">shell</a>
-                <a href="#" data-language-name="ruby">ruby</a>
-                <a href="#" data-language-name="python">python</a>
-                <a href="#" data-language-name="javascript">javascript</a>
           </div>
       </div>
     </div>
