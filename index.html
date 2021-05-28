@@ -692,41 +692,9 @@ When querying by <code>shelterluv_prefix</code>, the result will always be an ar
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves all products.</p>
+<p>This endpoint retrieves all products. This endpoint supports <a href="#pagination">pagination</a>.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET /api/v1/products</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
-<table><thead>
-<tr>
-<th>Name</th>
-<th>Located in</th>
-<th>Description</th>
-<th>Required</th>
-<th>Type</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>page</td>
-<td>query</td>
-<td>Page offset to fetch.</td>
-<td>No</td>
-<td>integer</td>
-</tr>
-<tr>
-<td>per_page</td>
-<td>query</td>
-<td>Number of results to return per page.</td>
-<td>No</td>
-<td>integer</td>
-</tr>
-<tr>
-<td>offset</td>
-<td>query</td>
-<td>Pad a number of results.</td>
-<td>No</td>
-<td>integer</td>
-</tr>
-</tbody></table>
 <h2 id='get-a-specific-product'>Get a Specific Product</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nexus-staging.invisiblecommerce.com/api/v1/products/34"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: 1234567890987654321"</span>
 </code></pre></div>
