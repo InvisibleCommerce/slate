@@ -424,13 +424,13 @@ You must replace <code>1234567890987654321</code> with the API key supplied to y
 <p>Please perform all testing and development work against the Staging environment. We can manipulate data in this environments as needed for your test cases. Please note that since this environment is not optimized for production usage, relatively slow response times are normal. </p>
 
 <p>When you have finished development, please request from our engineering team an API key for use with the Production environment. </p>
-<h1 id='pagination'>Pagination</h1>
+<h1 id='pagination'>Pagination</h1><h3 id='query-parameters'>Query Parameters</h3>
 <blockquote>
 <p>To use pagination parameters, include them in the query string:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"/api/v1/products?page=3&amp;per_page=50"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: 1234567890987654321"</span>
-</code></pre></div><h3 id='query-parameters'>Query Parameters</h3>
+</code></pre></div>
 <p>Pagination can be achieved by using the following parameters on endpoints that support pagination:</p>
 
 <table><thead>
