@@ -977,7 +977,7 @@ When querying by <code>shelterluv_prefix</code>, the result will always be an ar
 <ul>
 <li><code>stripe_token</code> must be a valid token available in our Stripe account (use Stripe test mode with Staging environment). The endpoint will return a 400 error if it is not valid.</li>
 <li><code>address[state]</code> must be a 2-letter state code, e.g. <code>IL</code></li>
-<li><code>address[country]</code> can only be &#39;US&#39;. Given that only one value is possible, it can optionally be omitted from the request. </li>
+<li><code>address[country]</code> can only be <code>US</code>. Given that only one value is possible, it can optionally be omitted from the request. </li>
 <li><code>customer[email]</code> must be a valid email. </li>
 <li><code>items[][quantity]</code> can optionally be omitted, in which case it will default to a value of <code>1</code>.</li>
 <li><code>recurrence[every]</code> can only be one of the following 3 values: <code>day</code>, <code>week</code>, or <code>month</code>.</li>
